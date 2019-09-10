@@ -12,22 +12,24 @@ public class McdJunit {
 
 	WebDriver driver;
 	
-//	@Before
-//	public void setUp() throws Exception {
+	@Before
+	public void setUp() throws Exception {
 //		System.setProperty("webdriver.chrome.driver","/Users/himanshumehta/Desktop/chromedriver");
 //		WebDriver driver = new ChromeDriver();
 //		driver.get("https://www.mcdonalds.com/ca/en-ca.html");
+//		WebElement popScreen = driver.findElement(By.cssSelector("a.exit"));
+//		popScreen.click();
 //		
-//		
-//	}
-//
-//	@After
-//	public void tearDown() throws Exception {
-//		
-//	}
-//
+	}
+
+	@After
+	public void tearDown() throws Exception {
+//		Thread.sleep(5000);
+//		driver.close();
+	}
+
 	@Test
-	public void testTitle() {	
+	public void testTitle() throws InterruptedException {	
 		
 		// Test case 1 :Title of the subscription feature is “Subscribe to my Mcd’s”
 		
@@ -40,12 +42,17 @@ public class McdJunit {
 		String SubscribeTextData = SubscribeText.getText();
 		
 		assertEquals("Subscribe to My McD’s®", SubscribeTextData);
+		Thread.sleep(5000);
+		driver.close();
 		
 	}
 
 	
 	@Test
 	public void testPosEmailSignup() throws InterruptedException {
+		
+		//Test case 2: Email signup with valid details
+		
 		System.setProperty("webdriver.chrome.driver","/Users/himanshumehta/Desktop/chromedriver");
 		WebDriver driver = new ChromeDriver();
 		driver.get("https://www.mcdonalds.com/ca/en-ca.html");
@@ -68,7 +75,8 @@ public class McdJunit {
 //		WebElement VerifyButton = driver.findElement(By.id("recaptcha-verify-button"));
 //		VerifyButton.click();
 		
-
+		Thread.sleep(5000);
+		driver.close();
 
 		
 		
@@ -78,10 +86,19 @@ public class McdJunit {
 
 
 	@Test
-	public void testNegEmailSignup() {
+	public void testNegEmailSignup() throws InterruptedException {
 
+		System.setProperty("webdriver.chrome.driver","/Users/himanshumehta/Desktop/chromedriver");
+		WebDriver driver = new ChromeDriver();
+		driver.get("https://www.mcdonalds.com/ca/en-ca.html");
 
+		WebElement popScreen = driver.findElement(By.cssSelector("a.exit"));
+		popScreen.click();
 
+		WebElement SubscribeButton = driver.findElement(By.id("g-recaptcha-btn-2"));
+		SubscribeButton.click();
+		Thread.sleep(5000);
+		driver.close();
 	}
 	
 	
