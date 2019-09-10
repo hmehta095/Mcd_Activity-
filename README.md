@@ -1,10 +1,12 @@
-Created By- *Himanshu Mehta (C0-744069)
-            *Simran Kaur Bal (C0-743319)
-                                                                   
-### Test Case on McDonald's App                  
+                                                                 
+### Test Case on McDonald's App  
+Created By- 
+1. Himanshu Mehta (C0-744069)
+2. Simran Kaur Bal (C0-743319)                
 
 #### A food app in which we are performing various test cases to see different different outcomes.
-###Test Cases:
+### Test Cases:
+
  ** TC1:  Title of the subscription feature is “Subscribe to my Mcd’s”.**
 
   Expected Outcome:
